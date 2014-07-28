@@ -1,20 +1,24 @@
 <html>
 
-<style type="text/css">
-    img {
-        border: 0;
-    }
-</style>
-
 <body>
-<div id="picplayer" style="position:relative;overflow:hidden;width:300px;height:300px;clear:none;border:solid 1px #ccc;">
-  hehehhehehehe
+<div id="picplayer"
+     style="position:relative;overflow:hidden;width:970px;height:800px;clear:none;border:solid 1px #ccc;">
+    hehehhehehehe
+</div>
+
+<div>
+    Descriptions:
+    <p>hehe</p>
+    <p>hehhehehe</p>
+    <p>hehehhehehe</p>
 </div>
 
 <script>
     var p = $('#picplayer');
     var pics = [
-        {url: '1.JPG', time: 50000000},
+        {url: 'assets/1.JPG', time: 50000000},
+        {url: 'assets/default_image.jpg', time: 50000000},
+        {url: 'default_image.jpg', time: 50000000},
         {url: 'default_image.jpg', time: 50000000}
     ];
     initPicPlayer(pics, p.css('width').split('px')[0], p.css('height').split('px')[0]);
@@ -29,14 +33,15 @@
         p.append('<div id="piccontent"></div>');
         var c = $('#piccontent');
         for (var i = 0; i < pics.length; i++) {
-            c.append('<a href="' + pics[i].link + '" target="_blank"><img id="picitem' + i + '" style="display: none;z-index:' + i + '" src="' + pics[i].url + '" /></a>');
+            c.append('<img id="picitem' + i + '" style="display: none;width:970px; height: 800px; z-index:' + i + '" src="' + pics[i].url + '" />');
         }
-        p.append('<div id="picbtnHolder" style="position:absolute;top:' + (heigth - 25) + 'px;width:' + width + 'px;height:20px;z-index:10000;"></div>');
+
+        p.append('<div id="picbtnHolder" style="position:absolute;top:' + (heigth - 25) + 'px;width:' + width + 'px;height:50px;z-index:10000;"></div>');
         var btnHolder = $('#picbtnHolder');
         btnHolder.append('<div id="picbtns" style="float:right; padding-right:1px;"></div>');
         var btns = $('#picbtns');
         for (var i = 0; i < pics.length; i++) {
-            btns.append('<span id="picbtn' + i + '" style="cursor:pointer; border:solid 1px #ccc;background-color:#eee; display:inline-block;"> ' + (i + 1) + ' </span> ');
+            btns.append('<span id="picbtn' + i + '" style="cursor:pointer; border:solid 1px #ccc;background-color:#eee; display:inline-block; width: 100px; height:30px"> ' + (i + 1) + ' </span> ');
             $('#picbtn' + i).data('index', i);
             $('#picbtn' + i).click(
                     function (event) {
