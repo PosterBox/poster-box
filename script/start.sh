@@ -1,4 +1,20 @@
 #!/bin/bash
 
-RAILS_ENV=production rails s
+RUNAS=pi
+RAILS_ROOT=/opt/git-repo/poster-box/
+LOG=/var/log/poster-box.log
+
+if [[ `whoami` == $RUNAS ]]; then
+	#export RAILS_ENV=production
+	export PATH="$PATH:$HOME/.rvm/bin"
+	[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+	cd $RAILS_ROOT
+	nohup rails s > $LOG &
+else
+	touch $LOG
+	chmod a+w $LOG
+	su -c "$0" $RUNAS
+fi
+
+
 
