@@ -7,8 +7,9 @@ class BypassService
   end
   
   def bypass ip
+    Rails.logger.debug "send bypass #{ip} request to #{@service_ip}:#{@service_port}"
     socket = TCPSocket.new @service_ip, @service_port
-    socket.send ip.to_s, 0
+    socket.send "#{ip}\n", 0
     socket.close
   end
 end
