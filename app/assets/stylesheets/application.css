@@ -32,3 +32,15 @@
 .text_show {
     display: none;
 }
+
+img {
+    max-width:100%;
+    height:auto;
+}
+
+/*@media screen and (orientation:portrait) and (max-width: 720px)  {*/
+    /*.ppt_img {*/
+        /*width: 970px;*/
+        /*height: 100%;*/
+    /*}*/
+/*}*/
