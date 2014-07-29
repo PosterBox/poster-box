@@ -1,8 +1,8 @@
 require "bypass_service"
 class ServiceController < ApplicationController
   def bypass
-    raise ArgumentError("no ip specifed") unless params.include? :ip
-    render :text => (BypassService.new.bypass params[:ip]).gsub(/\n/,"<br/>")
+    remote_ip = params[:ip] || request.remote_ip
+    render :text => (BypassService.new.bypass remote_ip).gsub(/\n/,"<br/>")
   end
 
   def reset
