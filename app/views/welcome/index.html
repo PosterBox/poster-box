@@ -2,7 +2,7 @@
 
 <body>
 <div id="picplayer"
-     style="position:relative;overflow:hidden;width:970px;height:800px;clear:none;border:solid 1px #ccc;">
+     style="position:relative;overflow:hidden;width:100%;height:100%;clear:none;border:solid 1px #ccc;">
     hehehhehehehe
 </div>
 
@@ -16,8 +16,9 @@
 <script>
     var p = $('#picplayer');
     var pics = [
-        {url: 'assets/1.JPG', time: 50000000},
-        {url: 'assets/default_image.jpg', time: 50000000}
+        {url: 'assets/meeting.jpg', time: 50000000},
+        {url: 'assets/train.jpg', time: 50000000},
+        {url: 'assets/bar.jpg', time: 50000000}
     ];
     initPicPlayer(pics, p.css('width').split('px')[0], p.css('height').split('px')[0]);
 
