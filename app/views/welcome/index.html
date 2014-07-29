@@ -3,7 +3,6 @@
 <body>
 <div id="picplayer"
      style="position:relative;overflow:hidden;width:100%;height:100%;clear:none;border:solid 1px #ccc;">
-    hehehhehehehe
 </div>
 
 <div>
@@ -23,12 +22,6 @@
         </h2>
     </div>
 
-    Descriptions:
-    <p>hehe</p>
-
-    <p>hehhehehe</p>
-
-    <p>hehehhehehe</p>
 </div>
 
 <script>
@@ -45,17 +38,29 @@
         var selectedBtn;
         var playID;
         var selectedIndex;
+        var selectedText;
+
         var p = $('#picplayer');
         p.text('');
+        p.append('<div id="pictext"></div>');
         p.append('<div id="piccontent"></div>');
+
+        var pict = $('#pictext');
+        pict.append('<div><p id="text0" class="text_show">hehehhehehheehehehehheheh</p></div>');
+        pict.append('<div><p id="text1" class="text_show">dsadasdsadasdsadsadas</p></div>');
+        pict.append('<div><p id="text2" class="text_show">scsaxzxxczzzs</p></div>');
+
         var c = $('#piccontent');
-        for (var i = 0; i < pics.length; i++) {
-            c.append('<img id="picitem' + i + '" style="display: none;width:970px; height: 800px; z-index:' + i + '" src="' + pics[i].url + '" />');
-        }
+
+        c.append('<div><img id="picitem0" class="img_show" src="' + pics[0].url + '" /></div>');
+        c.append('<img id="picitem1" class="img_show" src="' + pics[1].url + '" />');
+        c.append('<img id="picitem2" class="img_show" src="' + pics[2].url + '" />');
 
         p.append('<div id="picbtnHolder" style="position:absolute;top:' + (heigth - 25) + 'px;width:' + width + 'px;height:50px;z-index:10000;"></div>');
+
         var btnHolder = $('#picbtnHolder');
         btnHolder.append('<div id="picbtns" style="float:right; padding-right:1px;"></div>');
+
         var btns = $('#picbtns');
         for (var i = 0; i < pics.length; i++) {
             btns.append('<span id="picbtn' + i + '" style="cursor:pointer; border:solid 1px #ccc;background-color:#eee; display:inline-block; width: 100px; height:30px"> ' + (i + 1) + ' </span> ');
@@ -65,18 +70,25 @@
                         if (selectedItem.attr('src') == $('#picitem' + $(this).data('index')).attr('src')) {
                             return;
                         }
-                        setSelectedItem($(this).data('index'));
+                        if (selectedText.text() ==  $('#text' + $(this).data('index')).text()) {
+                            return;
+                        }
+                        setSelected($(this).data('index'));
                     }
             );
         }
         btns.append(' ');
-        setSelectedItem(0);
-        function setSelectedItem(index) {
+        setSelected(0);
+        function setSelected(index) {
             selectedIndex = index;
             clearInterval(playID);
             if (selectedItem)selectedItem.fadeOut('fast');
             selectedItem = $('#picitem' + index);
             selectedItem.fadeIn('slow');
+            $("#pictext p").css("display", "none");
+            
+            selectedText = $('#text' + index);
+            selectedText.show();
             if (selectedBtn) {
                 selectedBtn.css('backgroundColor', '#eee');
                 selectedBtn.css('color', '#000');
@@ -89,7 +101,7 @@
                 if (index > pics.length - 1)index = 0;
                 setSelectedItem(index);
             }, pics[index].time);
-        }
+        };
     }
 
 </script>

@@ -21,3 +21,14 @@
     margin-top: -250px;
     margin-left: -250px;
 }
+
+.img_show {
+    display: none;
+    width:970px;
+    height: 800px;
+    z-index:0
+}
+
+.text_show {
+    display: none;
+}
