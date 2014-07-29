@@ -13,6 +13,7 @@ Demo::Application.routes.draw do
 
   namespace :service do
     get :bypass 
+    get :reset
   end
 
   # Example of regular route:
