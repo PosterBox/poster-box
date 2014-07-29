@@ -6,7 +6,10 @@ Demo::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   get "/" => "welcome#index"
-  get 'welcome' => 'welcome#index'
+
+  namespace :demo do
+    get 'welcome' => 'welcome#index'
+  end
 
   namespace :service do
     get :bypass 
