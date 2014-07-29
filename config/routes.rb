@@ -1,18 +1,17 @@
 Demo::Application.routes.draw do
-  
-  
+
+
+  get "welcome/redirect"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  get "/" => "welcome#index"
+  get "/" => "welcome#redirect"
 
-  namespace :demo do
-    get 'welcome' => 'welcome#index'
-  end
+  get 'demo/' => 'welcome#index'
 
   namespace :service do
-    get :bypass 
+    get :bypass
     get :reset
   end
 
