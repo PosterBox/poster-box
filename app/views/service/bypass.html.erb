@@ -1,2 +1,12 @@
-<h1>Service#bypass</h1>
-<p>Find me in app/views/service/bypass.html.erb</p>
+<h1>为了安全起见暂时不能上网啦</h1>
+<h1>
+  <a href="http://<%= @host %>/demo/">
+    呵呵, 点我返回
+  </a>
+</h1>
+
+<script type="text/javascript" charset="utf-8">
+    setTimeout(function () {
+        window.location = "http://<%= @host%>/demo/";
+    }, 10000)
+</script>

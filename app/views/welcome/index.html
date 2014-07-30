@@ -10,18 +10,9 @@
 <!--</div>-->
 <div>
     <div>
-        <img src="/assets/1.png" />
-        <img src="/assets/2.png" />
-        <img src="/assets/3.png" />
-        <img src="/assets/4.png" />
-        <img src="/assets/5.png" />
-        <img src="/assets/6.png" />
-        <img src="/assets/7.png" />
-        <img src="/assets/8.png" />
-        <img src="/assets/9.png" />
-        <img src="/assets/10.png" />
-        <img src="/assets/11.png" />
-
+        <% 1.upto(11) do |i| %>
+        <img src='<%=asset_path "#{i}.png"%>' />
+        <% end %>
     </div>
     <div>
         <h1>
@@ -33,12 +24,6 @@
             <a href="/service/bypass">轻击此处上网</a>
         </h1>
     </div>
-    <div>
-        <h2>
-            <a href="/service/reset">别点这里</a>
-        </h2>
-    </div>
-
 </div>
 
 <!--<script>-->

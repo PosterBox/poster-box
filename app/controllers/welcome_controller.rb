@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def redirect
-    @host = ENV["HOST"] || "127.0.0.1:3000"
+    @host = ENV["BOXHOST"] || "192.168.20.254"
   end
   
   def index 

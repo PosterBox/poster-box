@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RUNAS=pi
+RUNAS=coney
 RAILS_ROOT=/opt/git-repo/poster-box/
 LOG=/var/log/poster-box.log
 
