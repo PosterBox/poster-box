@@ -15,7 +15,11 @@
 /log/*.log
 /tmp
 
+public
+
 .idea
 .ruby-version
 .ruby-gemset
 Gemfile.lock
+
+.DS_Store

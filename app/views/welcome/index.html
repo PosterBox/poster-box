@@ -6,105 +6,108 @@
 
 <body>
 <!--<div id="picplayer"-->
-     <!--style="position:relative;overflow:hidden;width:970px;height:800px;clear:none;border:solid 1px #ccc;">-->
+<!--style="position:relative;overflow:hidden;width:970px;height:800px;clear:none;border:solid 1px #ccc;">-->
 <!--</div>-->
 <div>
     <div>
         <% 1.upto(11) do |i| %>
-        <img src='<%=asset_path "#{i}.png"%>' />
+        <img src='<%=asset_path "#{i}.jpg"%>'/>
         <% end %>
     </div>
     <div>
+        <span>
         <h1>
-            <a href="https://jinshuju.net/f/hIKgIE">猛击此处投票</a>
-        </h1>
-    </div>
-    <div>
+            <a href="https://jinshuju.net/f/9jmFbK">猛击此处进行反馈</a>
+        </h1> 
+        </span>
+        <span>
         <h1>
-            <a href="/service/bypass">轻击此处上网</a>
+            <a href="/service/bypass">轻击此处登陆上网</a>
         </h1>
+            
+        </span>
     </div>
 </div>
 
 <!--<script>-->
-    <!--var p = $('#picplayer');-->
-    <!--var pics = [-->
-        <!--{url: '/assets/meeting.jpg', time: 50000000},-->
-        <!--{url: '/assets/train.jpg', time: 50000000},-->
-        <!--{url: '/assets/bar.jpg', time: 50000000}-->
-    <!--];-->
-    <!--initPicPlayer(pics, p.css('width').split('px')[0], p.css('height').split('px')[0]);-->
+<!--var p = $('#picplayer');-->
+<!--var pics = [-->
+<!--{url: '/assets/meeting.jpg', time: 50000000},-->
+<!--{url: '/assets/train.jpg', time: 50000000},-->
+<!--{url: '/assets/bar.jpg', time: 50000000}-->
+<!--];-->
+<!--initPicPlayer(pics, p.css('width').split('px')[0], p.css('height').split('px')[0]);-->
 
-    <!--function initPicPlayer(pics, width, heigth) {-->
-        <!--var selectedItem;-->
-        <!--var selectedBtn;-->
-        <!--var playID;-->
-        <!--var selectedIndex;-->
-        <!--var selectedText;-->
+<!--function initPicPlayer(pics, width, heigth) {-->
+<!--var selectedItem;-->
+<!--var selectedBtn;-->
+<!--var playID;-->
+<!--var selectedIndex;-->
+<!--var selectedText;-->
 
-        <!--var p = $('#picplayer');-->
-        <!--p.text('');-->
-        <!--p.append('<div id="pictext"></div>');-->
-        <!--p.append('<div id="piccontent"></div>');-->
+<!--var p = $('#picplayer');-->
+<!--p.text('');-->
+<!--p.append('<div id="pictext"></div>');-->
+<!--p.append('<div id="piccontent"></div>');-->
 
-        <!--var pict = $('#pictext');-->
-        <!--pict.append('<div><p id="text0" class="text_show">hehehhehehheehehehehheheh</p></div>');-->
-        <!--pict.append('<div><p id="text1" class="text_show">dsadasdsadasdsadsadas</p></div>');-->
-        <!--pict.append('<div><p id="text2" class="text_show">scsaxzxxczzzs</p></div>');-->
+<!--var pict = $('#pictext');-->
+<!--pict.append('<div><p id="text0" class="text_show">hehehhehehheehehehehheheh</p></div>');-->
+<!--pict.append('<div><p id="text1" class="text_show">dsadasdsadasdsadsadas</p></div>');-->
+<!--pict.append('<div><p id="text2" class="text_show">scsaxzxxczzzs</p></div>');-->
 
-        <!--var c = $('#piccontent');-->
+<!--var c = $('#piccontent');-->
 
-        <!--c.append('<div><img id="picitem0" class="img_show" src="' + pics[0].url + '" /></div>');-->
-        <!--c.append('<img id="picitem1" class="img_show" src="' + pics[1].url + '" />');-->
-        <!--c.append('<img id="picitem2" class="img_show" src="' + pics[2].url + '" />');-->
+<!--c.append('<div><img id="picitem0" class="img_show" src="' + pics[0].url + '" /></div>');-->
+<!--c.append('<img id="picitem1" class="img_show" src="' + pics[1].url + '" />');-->
+<!--c.append('<img id="picitem2" class="img_show" src="' + pics[2].url + '" />');-->
 
-        <!--p.append('<div id="picbtnHolder" style="position:absolute;top:' + (heigth - 25) + 'px;width:' + width + 'px;height:100px;z-index:10000;"></div>');-->
+<!--p.append('<div id="picbtnHolder" style="position:absolute;top:' + (heigth - 25) + 'px;width:' + width + 'px;height:100px;z-index:10000;"></div>');-->
 
-        <!--var btnHolder = $('#picbtnHolder');-->
-        <!--btnHolder.append('<div id="picbtns" style="float:right; padding-right:1px;"></div>');-->
+<!--var btnHolder = $('#picbtnHolder');-->
+<!--btnHolder.append('<div id="picbtns" style="float:right; padding-right:1px;"></div>');-->
 
-        <!--var btns = $('#picbtns');-->
-        <!--for (var i = 0; i < pics.length; i++) {-->
-            <!--btns.append('<span id="picbtn' + i + '" style="cursor:pointer; border:solid 1px #ccc;background-color:#eee; display:inline-block; width: 150px; height:70px"> ' + (i + 1) + ' </span> ');-->
-            <!--$('#picbtn' + i).data('index', i);-->
-            <!--$('#picbtn' + i).click(-->
-                    <!--function (event) {-->
-                        <!--if (selectedItem.attr('src') == $('#picitem' + $(this).data('index')).attr('src')) {-->
-                            <!--return;-->
-                        <!--}-->
-                        <!--if (selectedText.text() ==  $('#text' + $(this).data('index')).text()) {-->
-                            <!--return;-->
-                        <!--}-->
-                        <!--setSelected($(this).data('index'));-->
-                    <!--}-->
-            <!--);-->
-        <!--}-->
-        <!--btns.append(' ');-->
-        <!--setSelected(0);-->
-        <!--function setSelected(index) {-->
-            <!--selectedIndex = index;-->
-            <!--clearInterval(playID);-->
-            <!--if (selectedItem)selectedItem.fadeOut('fast');-->
-            <!--selectedItem = $('#picitem' + index);-->
-            <!--selectedItem.fadeIn('slow');-->
-            <!--$("#pictext p").css("display", "none");-->
-            <!---->
-            <!--selectedText = $('#text' + index);-->
-            <!--selectedText.show();-->
-            <!--if (selectedBtn) {-->
-                <!--selectedBtn.css('backgroundColor', '#eee');-->
-                <!--selectedBtn.css('color', '#000');-->
-            <!--}-->
-            <!--selectedBtn = $('#picbtn' + index);-->
-            <!--selectedBtn.css('backgroundColor', '#000');-->
-            <!--selectedBtn.css('color', '#fff');-->
-            <!--playID = setInterval(function () {-->
-                <!--var index = selectedIndex + 1;-->
-                <!--if (index > pics.length - 1)index = 0;-->
-                <!--setSelectedItem(index);-->
-            <!--}, pics[index].time);-->
-        <!--};-->
-    <!--}-->
+<!--var btns = $('#picbtns');-->
+<!--for (var i = 0; i < pics.length; i++) {-->
+<!--btns.append('<span id="picbtn' + i + '" style="cursor:pointer; border:solid 1px #ccc;background-color:#eee; display:inline-block; width: 150px; height:70px"> ' + (i + 1) + ' </span> ');-->
+<!--$('#picbtn' + i).data('index', i);-->
+<!--$('#picbtn' + i).click(-->
+<!--function (event) {-->
+<!--if (selectedItem.attr('src') == $('#picitem' + $(this).data('index')).attr('src')) {-->
+<!--return;-->
+<!--}-->
+<!--if (selectedText.text() ==  $('#text' + $(this).data('index')).text()) {-->
+<!--return;-->
+<!--}-->
+<!--setSelected($(this).data('index'));-->
+<!--}-->
+<!--);-->
+<!--}-->
+<!--btns.append(' ');-->
+<!--setSelected(0);-->
+<!--function setSelected(index) {-->
+<!--selectedIndex = index;-->
+<!--clearInterval(playID);-->
+<!--if (selectedItem)selectedItem.fadeOut('fast');-->
+<!--selectedItem = $('#picitem' + index);-->
+<!--selectedItem.fadeIn('slow');-->
+<!--$("#pictext p").css("display", "none");-->
+<!---->
+<!--selectedText = $('#text' + index);-->
+<!--selectedText.show();-->
+<!--if (selectedBtn) {-->
+<!--selectedBtn.css('backgroundColor', '#eee');-->
+<!--selectedBtn.css('color', '#000');-->
+<!--}-->
+<!--selectedBtn = $('#picbtn' + index);-->
+<!--selectedBtn.css('backgroundColor', '#000');-->
+<!--selectedBtn.css('color', '#fff');-->
+<!--playID = setInterval(function () {-->
+<!--var index = selectedIndex + 1;-->
+<!--if (index > pics.length - 1)index = 0;-->
+<!--setSelectedItem(index);-->
+<!--}, pics[index].time);-->
+<!--};-->
+<!--}-->
 
 <!--</script>-->
 </body>
